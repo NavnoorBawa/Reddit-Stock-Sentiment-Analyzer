@@ -166,11 +166,15 @@ function displayResults(data) {
     
     data.posts.forEach(post => {
         const row = document.createElement('tr');
+        const linkHtml = post.url 
+            ? `<a href="${post.url}" target="_blank" class="reddit-link">View on Reddit 🔗</a>`
+            : '<span class="no-link">Sample Data</span>';
         row.innerHTML = `
             <td>${escapeHtml(post.title)}</td>
             <td>⬆️ ${post.score.toLocaleString()}</td>
             <td>💬 ${post.comments.toLocaleString()}</td>
             <td><span class="sentiment-badge ${post.label.toLowerCase()}">${post.label}</span></td>
+            <td>${linkHtml}</td>
         `;
         postsBody.appendChild(row);
     });

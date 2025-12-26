@@ -1,6 +1,6 @@
 /* 
-   SentimentX Pro - Modern Dark Theme
-   Stock Sentiment Analyzer
+   SentimentX Pro - Stock Trading Dark Theme
+   Inspired by Bloomberg, Robinhood, TradingView
 */
 
 * {
@@ -10,21 +10,21 @@
 }
 
 :root {
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #12121a;
-    --bg-card: #1a1a24;
-    --bg-hover: #222230;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0b0;
-    --text-muted: #6a6a7a;
-    --accent-cyan: #00d4ff;
-    --accent-purple: #a855f7;
-    --accent-pink: #ec4899;
-    --positive: #00ff88;
-    --negative: #ff6b6b;
-    --neutral: #ffd700;
-    --border: rgba(255, 255, 255, 0.08);
-    --glow: 0 0 20px rgba(0, 212, 255, 0.3);
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --bg-card: #1c2128;
+    --bg-hover: #262c36;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --text-muted: #6e7681;
+    --accent-emerald: #10b981;
+    --accent-gold: #f59e0b;
+    --accent-blue: #3b82f6;
+    --positive: #22c55e;
+    --negative: #ef4444;
+    --neutral: #eab308;
+    --border: rgba(240, 246, 252, 0.1);
+    --glow: 0 0 30px rgba(16, 185, 129, 0.4);
 }
 
 body {
@@ -51,9 +51,9 @@ body {
     position: absolute;
     width: 150%;
     height: 150%;
-    background: radial-gradient(ellipse at 20% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+    background: radial-gradient(ellipse at 20% 20%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 50%, rgba(245, 158, 11, 0.06) 0%, transparent 50%);
     animation: gradientMove 20s ease-in-out infinite;
 }
 
@@ -89,13 +89,13 @@ body {
 
 .logo-icon {
     font-size: 32px;
-    filter: drop-shadow(0 0 10px var(--accent-cyan));
+    filter: drop-shadow(0 0 10px var(--accent-emerald));
 }
 
 .logo-text h1 {
     font-size: 24px;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -122,7 +122,7 @@ body {
 }
 
 .nav-link:hover, .nav-link.active {
-    color: var(--accent-cyan);
+    color: var(--accent-emerald);
 }
 
 /* Hero */
@@ -138,7 +138,7 @@ body {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-pink));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-gold), var(--accent-blue));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -189,7 +189,7 @@ body {
 
 .input-group input:focus {
     outline: none;
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-emerald);
     box-shadow: var(--glow);
 }
 
@@ -200,7 +200,7 @@ body {
 .analyze-btn {
     width: 100%;
     padding: 18px;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-blue));
     border: none;
     border-radius: 12px;
     font-size: 15px;
@@ -218,7 +218,7 @@ body {
 
 .analyze-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
 }
 
 .analyze-btn:active {
@@ -266,8 +266,8 @@ body {
 
 .quick-btn:hover {
     background: var(--bg-hover);
-    border-color: var(--accent-cyan);
-    color: var(--accent-cyan);
+    border-color: var(--accent-emerald);
+    color: var(--accent-emerald);
 }
 
 /* Loading State */
@@ -297,12 +297,12 @@ body {
 }
 
 .loader-ring:nth-child(1) {
-    border-top-color: var(--accent-cyan);
+    border-top-color: var(--accent-emerald);
     animation-delay: 0s;
 }
 
 .loader-ring:nth-child(2) {
-    border-right-color: var(--accent-purple);
+    border-right-color: var(--accent-gold);
     animation-delay: 0.15s;
     width: 70%;
     height: 70%;
@@ -311,7 +311,7 @@ body {
 }
 
 .loader-ring:nth-child(3) {
-    border-bottom-color: var(--accent-pink);
+    border-bottom-color: var(--accent-blue);
     animation-delay: 0.3s;
     width: 40%;
     height: 40%;
@@ -362,7 +362,7 @@ body {
 }
 
 .company-badge {
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-blue));
     padding: 6px 16px;
     border-radius: 20px;
     font-size: 12px;
@@ -397,7 +397,7 @@ body {
     height: 100%;
     border-radius: 4px;
     transition: width 1s ease-out;
-    background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(90deg, var(--accent-emerald), var(--accent-blue));
 }
 
 .confidence-text {
@@ -424,7 +424,7 @@ body {
 
 .metric-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-emerald);
 }
 
 .metric-icon {
@@ -441,7 +441,7 @@ body {
 .metric-card:nth-child(1) .metric-value { color: var(--positive); }
 .metric-card:nth-child(2) .metric-value { color: var(--neutral); }
 .metric-card:nth-child(3) .metric-value { color: var(--negative); }
-.metric-card:nth-child(4) .metric-value { color: var(--accent-cyan); }
+.metric-card:nth-child(4) .metric-value { color: var(--accent-blue); }
 
 .metric-label {
     font-size: 12px;
@@ -646,7 +646,7 @@ body {
 
 .feature:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-cyan);
+    border-color: var(--accent-emerald);
 }
 
 .feature-icon {
@@ -695,13 +695,13 @@ body {
 
 .team-card:hover {
     transform: translateY(-4px);
-    border-color: var(--accent-purple);
+    border-color: var(--accent-gold);
 }
 
 .team-avatar {
     width: 64px;
     height: 64px;
-    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+    background: linear-gradient(135deg, var(--accent-emerald), var(--accent-blue));
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -795,6 +795,29 @@ body {
 
 /* Selection */
 ::selection {
-    background: var(--accent-cyan);
+    background: var(--accent-emerald);
     color: var(--bg-primary);
+}
+
+/* Reddit Link Styles */
+.reddit-link {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 10px;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.reddit-link:hover {
+    background: rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+}
+
+.no-link {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-style: italic;
 }

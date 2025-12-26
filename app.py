@@ -139,12 +139,15 @@ def fetch_reddit_posts(company, limit=25):
                 posts = data.get('data', {}).get('children', [])
                 for post in posts:
                     post_data = post.get('data', {})
+                    permalink = post_data.get('permalink', '')
+                    reddit_url = f"https://www.reddit.com{permalink}" if permalink else ''
                     all_posts.append({
                         'title': post_data.get('title', ''),
                         'score': post_data.get('score', 0),
                         'comments': post_data.get('num_comments', 0),
                         'subreddit': post_data.get('subreddit', ''),
-                        'created': post_data.get('created_utc', 0)
+                        'created': post_data.get('created_utc', 0),
+                        'url': reddit_url
                     })
         except:
             continue
@@ -245,7 +248,8 @@ def analyze():
             'comments': post.get('comments', 0),
             'sentiment': round(sentiment, 3),
             'label': label,
-            'color': color
+            'color': color,
+            'url': post.get('url', '')
         })
     
     # Calculate metrics
