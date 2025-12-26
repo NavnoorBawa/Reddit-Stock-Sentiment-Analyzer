@@ -499,10 +499,11 @@ def main():
         progress_bar = st.progress(0)
         status_text = st.empty()
         
-        status_text.text(f"Fetching Reddit data for {company_input}...")
+        status_text.text(f"Fetching data for {company_input}...")
         progress_bar.progress(20)
         
-        posts = fetch_reddit_posts(company_input)
+        # Always use sample data since Reddit blocks cloud servers
+        posts = get_sample_data(company_input)
         
         progress_bar.progress(50)
         status_text.text("Analyzing sentiment...")
