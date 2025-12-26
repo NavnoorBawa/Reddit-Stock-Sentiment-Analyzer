@@ -1,10 +1,15 @@
-# ⚡ Reddit Stock Sentiment Analyzer
+# ⚡ SentimentX Pro - Reddit Stock Sentiment Analyzer
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://python.org)
-[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io)
+[![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)](https://flask.palletsprojects.com)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen.svg)](https://sentimentx-pro.onrender.com)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 A real-time sentiment analysis system that fetches live Reddit data to help investors gauge public opinion about companies before making investment decisions.
+
+## 🌐 Live Demo
+
+**[https://sentimentx-pro.onrender.com](https://sentimentx-pro.onrender.com)**
 
 ![Dashboard Preview](outputs/sentiment_distribution.png)
 
@@ -18,8 +23,10 @@ This project analyzes Reddit discussions from investment communities (r/stocks, 
 
 - 🚀 **Real-Time Analysis** - Fetches live Reddit posts using Reddit's free JSON API
 - 🤖 **Machine Learning** - Trained on 37K+ Reddit samples with 5 different ML models
-- 📊 **Interactive Dashboard** - Beautiful Streamlit web interface with dark theme
+- 🌐 **Modern Web Dashboard** - Beautiful Flask web app with stock trading dark theme
 - 📈 **Investment Recommendations** - Clear BUY/HOLD/SELL signals based on sentiment
+- 🔗 **Reddit Links** - Click through to original Reddit posts
+- 🎨 **Professional Design** - Inspired by Bloomberg, Robinhood, and TradingView
 - 🔄 **No API Keys Required** - Uses Reddit's public JSON endpoints
 
 ---
@@ -29,11 +36,18 @@ This project analyzes Reddit discussions from investment communities (r/stocks, 
 ```
 Reddit-Stock-Sentiment-Analyzer/
 │
+├── app.py                            # Flask Web Application (Main)
 ├── module_1_2_eda_preprocessing.py   # Data Exploration & Text Preprocessing
 ├── module_3_4_model_evaluation.py    # Model Training & Evaluation
-├── module_5_dashboard.py             # Streamlit Web Dashboard
 ├── module_6_experiments.py           # AI Exploration & Edge Cases
 ├── live_reddit_analyzer.py           # Live Reddit Data Fetcher
+│
+├── templates/
+│   └── index.html                    # Main HTML template
+│
+├── static/
+│   ├── css/style.css                 # Stock trading dark theme CSS
+│   └── js/app.js                     # Interactive JavaScript
 │
 ├── data/
 │   ├── Reddit_Data.csv               # Original dataset
@@ -51,6 +65,7 @@ Reddit-Stock-Sentiment-Analyzer/
 │   ├── model_comparison.png          # Accuracy comparison of 5 models
 │   └── training_vs_test.png          # Overfitting analysis
 │
+├── Procfile                          # Render deployment config
 ├── requirements.txt                  # Python dependencies
 └── README.md                         # Project documentation
 ```
@@ -85,16 +100,22 @@ python -c "import nltk; nltk.download('punkt')"
 
 ## 🚀 How to Run
 
-### Option 1: Run the Dashboard (Recommended)
-```bash
-streamlit run module_5_dashboard.py
-```
-Opens a web interface at `http://localhost:8501` where you can:
-- Enter any company name (Tesla, Apple, Google, etc.)
-- Get real-time sentiment analysis from Reddit
-- Receive investment recommendations
+### Option 1: Visit Live Demo (Recommended)
+**[https://sentimentx-pro.onrender.com](https://sentimentx-pro.onrender.com)**
 
-### Option 2: Run Individual Modules
+### Option 2: Run Locally
+```bash
+# Clone and install
+git clone https://github.com/NavnoorBawa/Reddit-Stock-Sentiment-Analyzer.git
+cd Reddit-Stock-Sentiment-Analyzer
+pip install -r requirements.txt
+
+# Run Flask app
+python app.py
+```
+Opens at `http://localhost:5000`
+
+### Option 3: Run Individual Modules
 
 **Step 1: Data Exploration & Preprocessing**
 ```bash
@@ -147,10 +168,12 @@ python live_reddit_analyzer.py
 | Category | Technologies |
 |----------|-------------|
 | **Language** | Python 3.8+ |
+| **Backend** | Flask, Gunicorn |
+| **Frontend** | HTML5, CSS3, JavaScript |
 | **ML/NLP** | scikit-learn, TextBlob, NLTK |
 | **Data Processing** | pandas, numpy |
 | **Visualization** | matplotlib, seaborn |
-| **Web Framework** | Streamlit |
+| **Deployment** | Render |
 | **Data Source** | Reddit JSON API |
 
 ---
@@ -173,13 +196,14 @@ https://www.reddit.com/r/stocks/search.json?q=Tesla
 
 ## 🎨 Dashboard Features
 
-- **Dark Theme UI** - Modern black interface with neon accents
-- **Quick Company Selection** - Popular stocks dropdown
+- **Stock Trading Dark Theme** - Professional design inspired by Bloomberg & Robinhood
+- **Emerald/Gold Color Scheme** - Green for profits, red for losses
+- **Quick Company Selection** - Popular stocks with one-click analysis
 - **Real-Time Fetching** - Live Reddit data analysis
 - **Sentiment Metrics** - Positive/Neutral/Negative percentages
-- **Investment Signals** - Clear BUY/HOLD/SELL recommendations
-- **Post Analysis** - View top Reddit discussions
-- **Community Breakdown** - Sentiment by subreddit
+- **Investment Signals** - Clear BUY/HOLD/SELL recommendations with confidence scores
+- **Reddit Links** - Click through to view original Reddit posts
+- **Responsive Design** - Works on desktop and mobile
 
 ---
 
@@ -191,7 +215,7 @@ https://www.reddit.com/r/stocks/search.json?q=Tesla
 | Module 2 | Data Preprocessing & Feature Engineering | ✅ Complete |
 | Module 3 | Model Building (5 ML Models) | ✅ Complete |
 | Module 4 | Model Evaluation & Metrics | ✅ Complete |
-| Module 5 | Deployment (Streamlit Dashboard) | ✅ Complete |
+| Module 5 | Deployment (Flask Web App on Render) | ✅ Complete |
 | Module 6 | AI Exploration & Experiments | ✅ Complete |
 
 ---
@@ -230,11 +254,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Reddit for providing free JSON API access
 - Kaggle for the Reddit Sentiment Dataset
-- Streamlit for the amazing web framework
+- Flask for the lightweight web framework
+- Render for free cloud hosting
 - scikit-learn for ML algorithms
 
 ---
 
 <p align="center">
   Made with ❤️ by Saksham, Navnoor & Pulkit
+</p>
+<p align="center">
+  <a href="https://sentimentx-pro.onrender.com">🌐 Live Demo</a>
 </p>
